@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --comic-font: 'Bangers', cursive, sans-serif;
+  --marker-font: 'Permanent Marker', cursive, sans-serif;
+  --body-font: 'Space Grotesk', sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0b111e;
+  color: #f1f5f9;
+  font-family: var(--body-font);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 20px 20px;
+  min-height: 100vh;
+}
+
+.font-comic {
+  font-family: var(--comic-font);
+  letter-spacing: 0.06em;
+}
+
+.font-marker {
+  font-family: var(--marker-font);
+}
+
+.halftone-pattern {
+  background-color: #d97706;
+  background-image: radial-gradient(#92400e 20%, transparent 20%);
+  background-size: 8px 8px;
+}
+
+.halftone-cyan {
+  background-color: #0284c7;
+  background-image: radial-gradient(#0369a1 25%, transparent 25%);
+  background-size: 8px 8px;
+}
+
+.halftone-dark {
+  background-color: #1e293b;
+  background-image: radial-gradient(#0f172a 25%, transparent 25%);
+  background-size: 7px 7px;
+}
+
+.comic-border {
+  border: 4px solid #ffffff;
+  box-shadow: 7px 7px 0px #000000;
+}
+
+.comic-border-red {
+  border: 4px solid #e11d48;
+  box-shadow: 7px 7px 0px #000000;
+}
+
+.comic-border-yellow {
+  border: 4px solid #fbbf24;
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.comic-btn-shadow {
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comic-btn-shadow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.comic-btn-shadow:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+.tilt-left {
+  transform: rotate(-1.5deg);
+}
+
+.tilt-right {
+  transform: rotate(1.8deg);
+}
+
+.tilt-slight {
+  transform: rotate(-0.7deg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #e11d48;
+  border: 2px solid #000;
 }
